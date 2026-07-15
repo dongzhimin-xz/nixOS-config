@@ -23,7 +23,7 @@
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "nodev"; # or "nodev" for efi only
-  boot.loader.grub.extraGrubInstallArgs = ["--bootloader-id=NIXOS"];
+  boot.loader.grub.extraGrubInstallArgs = [ "--bootloader-id=NIXOS" ];
 
   networking.hostName = "nixos"; # Define your hostname.
 
