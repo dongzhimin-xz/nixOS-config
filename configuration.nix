@@ -19,12 +19,12 @@
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
+  # boot.loader.grub.efiInstallAsRemovable = true;	# 当前处于BIOS启动的系统时，若想要配置UEFI启动，解除该配置的注释
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
-  boot.loader.grub.device = "nodev"; # or "nodev" for efi only
-  boot.loader.grub.extraGrubInstallArgs = [ "--bootloader-id=NIXOS" "--recheck"];
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.device = "nodev"; # or "nodev" for efi only	# 若要配置为BIOS启动，值改为系统所在的硬盘
+  boot.loader.grub.extraGrubInstallArgs = ["--bootloader-id=NIXOS" "--recheck"];	# UEFI环境下，设置bootloader id对多系统启动有帮助
+  boot.loader.efi.canTouchEfiVariables = true;	# UEFI启动时，启用该配置
 
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -112,7 +112,7 @@
     enableSSHSupport = true;
   };
 
-  virtualisation.vmware.guest.enable = true;
+  virtualisation.vmware.guest.enable = true;	# 配置该选项,在VMWare虚拟机下可以实现随窗口自动伸缩界面、共享文件夹
 
 
   nix.settings.substituters = [
