@@ -100,6 +100,7 @@
     grim
     flameshot
     chromium
+    htop
   ];
 
   nixpkgs.config.allowUnfree = true;  
