@@ -26,6 +26,9 @@
   boot.loader.grub.extraGrubInstallArgs = ["--bootloader-id=NIXOS" "--recheck"];	# UEFI环境下，设置bootloader id对多系统启动有帮助
   boot.loader.efi.canTouchEfiVariables = true;	# UEFI启动时，启用该配置
 
+  boot.kernelPackages = pkgs.linuxPackages_latest; # 使用最新内核
+
+
   networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
